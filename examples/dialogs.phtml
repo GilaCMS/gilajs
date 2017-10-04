@@ -1,0 +1,41 @@
+
+
+<body>
+
+<br><br><br><br><br>
+<p>Popups</p>
+<a class="btn" id="event-te" onclick="g.popup('Hellow world!','small')">Small popup</a>
+<a class="btn" onclick="g.popup('Hellow world!')">Medium popup</a>
+<a class="btn" onclick="g.popup('Hellow world!','large')">Large popup</a>
+<a class="btn" onclick="g.popup('Hellow world!','small alert error lightscreen')">Small popup</a>
+
+<br><br><br><br>
+<p>Alerts</p>
+<a class="btn" onclick="g.alert('This is an alert!')">Alert</a>
+<a class="btn" onclick="g.alert('This is an alert!','success')">Success</a>
+<a class="btn" onclick="g.alert('This is an alert!','error')">Error</a>
+<a class="btn" onclick="g.alert('This is an alert!','warning')">Warning</a>
+<a class="btn" onclick="g.alert('This is an alert!','notice')">Notice</a>
+<a class="btn" onclick="g.alert('This is an alert!','success','location.reload()')">With Callback</a>
+
+<br><br><br><br>
+<p>Custom dialogs</p>
+<a class="btn" onclick="g.dialog({class:'lightscreen',title:'title',body:'Hola!'});">Alert</a>
+<a class="btn" onclick="g.popup(g('#custom-popup').html())">Custom popup</a>
+<a class="btn event-test" id="event-test" onclick="alert(g('.event-test').all[0].id);">Alert</a>
+<!--div id="gila-popup">Hellow world!</div-->
+
+<!--div id="gila-popup-l">Hellow world!</div-->
+
+<div id='custom-popup' class='hidden'>
+    <div class='title'>Title</div>
+    <div class='body'>Body text</div>
+    <div class='footer'>Footer</div>
+</div>
+
+</body>
+<script>
+/*g.click('.event-test',function(){
+    rj.popup(rj('#custom-popup').html());
+})*/
+</script>

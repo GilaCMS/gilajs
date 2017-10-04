@@ -1,0 +1,37 @@
+
+
+<p class="gs-12">Tabs</p>
+<ul class="g-nav g-tabs gs-12">
+<li><a href="#tab1">Item 1</a></li><li><a href="#tab2">Item 2</a></li>
+<li><a href="#">Submenu</a>
+    <ul>
+        <li><a href="#tab1">Item 1</a></li>
+    </ul>
+</li>
+</ul>
+<div class="tab-content gs-12">
+    <div id="tab1">
+        <h1>Tab 1</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <div id="tab2">
+        <h1>Tab 2</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <div id="tab3">
+        <h1>Tab 3</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+</div>
+<script>
+g.click('.g-tabs a',function(){
+
+    g(event.target).findUp('.g-tabs').children().removeClass('active');
+    g(event.target).findUp('li').addClass('active');
+
+    hash=event.target.href.split('#');
+    if(typeof hash[1]!=='undefined') if(hash[1]!==''){
+        x='#'+hash[1];
+        g(x).parent().children().style('display','none');
+        g(x).style('display','block');
+    }
+    return false;
+})
+</script>

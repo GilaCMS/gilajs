@@ -1,0 +1,85 @@
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row>*{
+    float: left;
+}
+
+[class*="gxs-"],
+[class*="gs-"],
+[class*="gm-"],
+[class*="gl-"] {display:inline-block;width: 100%; /*padding:8px*/}
+
+/*[class*="gxs-"] input,[class*="gxs-"] select,
+[class*="gs-"] input,[class*="gs-"] select,
+[class*="gm-"] input,[class*="gm-"] select,
+[class*="gl-"] input,[class*="gl-"] select {width: 100%;}
+*/
+/*
+.gxs-1 {width: 8.33%;}
+.gxs-2 {width: 16.66%;}
+.gxs-3 {width: 25%;}
+.gxs-4 {width: 33.33%;}
+.gxs-5 {width: 41.66%;}
+.gxs-6 {width: 50%;}
+.gxs-7 {width: 58.33%;}
+.gxs-8 {width: 66.66%;}
+.gxs-9 {width: 75%;}
+.gxs-10 {width: 83.33%;}
+.gxs-11 {width: 91.66%;}
+.gxs-12 {width: 100%;}
+*/
+@media only screen and (min-width: 300px) {
+    /* For mobile phones: */
+    .gs-1 {width: 8.33%;}
+    .gs-2 {width: 16.66%;}
+    .gs-3 {width: 25%;}
+    .gs-4 {width: 33.33%;}
+    .gs-5 {width: 41.66%;}
+    .gs-6 {width: 50%;}
+    .gs-7 {width: 58.33%;}
+    .gs-8 {width: 66.66%;}
+    .gs-9 {width: 75%;}
+    .gs-10 {width: 83.33%;}
+    .gs-11 {width: 91.66%;}
+    .gs-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .gm-1 {width: 8.33%;}
+    .gm-2 {width: 16.66%;}
+    .gm-3 {width: 25%;}
+    .gm-4 {width: 33.33%;}
+    .gm-5 {width: 41.66%;}
+    .gm-6 {width: 50%;}
+    .gm-7 {width: 58.33%;}
+    .gm-8 {width: 66.66%;}
+    .gm-9 {width: 75%;}
+    .gm-10 {width: 83.33%;}
+    .gm-11 {width: 91.66%;}
+    .gm-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .gl-1 {width: 8.33%;}
+    .gl-2 {width: 16.66%;}
+    .gl-3 {width: 25%;}
+    .gl-4 {width: 33.33%;}
+    .gl-5 {width: 41.66%;}
+    .gl-6 {width: 50%;}
+    .gl-7 {width: 58.33%;}
+    .gl-8 {width: 66.66%;}
+    .gl-9 {width: 75%;}
+    .gl-10 {width: 83.33%;}
+    .gl-11 {width: 91.66%;}
+    .gl-12 {width: 100%;}
+}
+
+.g-f4 {
+    font: normal normal normal 14px/1 Arial
+}

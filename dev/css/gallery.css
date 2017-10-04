@@ -1,0 +1,14 @@
+
+.g-gal>* {
+    display:inline-block;
+    width:100px; /*110px;*/
+    text-align:center;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+.g-gal-sm>* {
+    width:50px;
+}
+.g-gal-lg>* {
+    width:200px;
+}

@@ -1,0 +1,102 @@
+<?php
+$thead="<thead>
+<tr>
+    <th>Firstname</th><th>Lastname</th><th>City</th><th>Age</th>
+</tr>
+</thead>";
+$table="
+
+<tr>
+    <td>Jill</td><td>Smith</td><td>Amsterdam</td><td>50</td>
+</tr>
+<tr>
+    <td>Eve</td><td>Jackson</td><td>Amsterdam</td><td>50</td>
+</tr>
+<tr>
+    <td>Jill</td><td>Smith</td><td>Amsterdam</td><td>50</td>
+</tr>
+<tr>
+    <td>Eve</td><td>Jackson</td><td>Amsterdam</td><td>50</td>
+</tr>
+";
+?>
+<style>table{overflow-x: scroll;}</style>
+
+<div class="row padding-8px gap-8px">
+
+<div class="gm-7">
+<p>Basic table </p>
+<div id="tbl-p" style="overflow:auto">
+<table class="g-table" id="tbl">
+    <?=$thead?><?=$table?><?=$table?><?=$table?><?=$table?>
+</table>
+</div>
+</div>
+
+<div class="gm-2">
+<p>Classes</p>
+<ul class="g-nav vertical">
+    <li onclick="g('#tbl').toggleClass('bordered')">.bordered</li>
+    <li onclick="g('#tbl').toggleClass('stripped')">.stripped</li>
+    <li onclick="g('#tbl').toggleClass('shrinked')">.shrinked</li>
+    <li onclick="g('#tbl tbody td:nth-child(1)').toggleClass('fixed-column')">.first-id</li>
+    <li onclick="g('#tbl').toggleClass('thead-invert')">.thead-ivert</li>
+</ul>
+</div>
+
+<div class="gm-3">
+<p>Funcions </p>
+<ul class="vertical">
+<button id="tbselect">Select</button>
+<button id="tbswitch">Switch</button>
+<button id="tbfixedhead">FixedHead</button></p>
+<button id="tbajax" onclick="PNK('tbl-p')">Ajax</button></p>
+</div>
+</div>
+
+<input id="output">
+
+<script>
+g.click('#tbselect',function(){
+    g('#tbl thead tr').prepend('<th style="width:32px;height:100%"> ')
+    g('#tbl thead tr th:nth-child(1)').addClass('fixed-column')
+    g('#tbl tbody tr').prepend('<td><input type="checkbox">')
+    g('#tbl tbody tr td:nth-child(1)').addClass('fixed-column')
+})
+g.click('#tbswitch',function(){
+    g('#tbl thead tr').append('<th style="width:57px"> ')
+    g('#tbl tbody tr').append('<td><label class="g-switch"><input type="checkbox"><div class="g-slider"></div></label>')
+})
+g.click('#tbfixedhead',function(){
+    var widths = new Array()
+    var index=0;
+    //g('#tbl').parent().style('height','300px').style('overflow','auto');
+    g('#tbl-p').style('height','300px').style('overflow','auto');
+    g('#tbl-p table').style('position','relative');
+    g('#tbl-p table thead tr:nth-child(1) th').all.forEach(function(entry) {
+        widths[index] = entry.offsetWidth;
+        index++
+    }, this);
+    g('#tbl-p table thead').prepend('<tr>'+g('#tbl-p table thead tr:nth-child(1)').html()+'</tr>')
+    index=0;
+    g('#tbl-p table thead tr:nth-child(1) th').all.forEach(function(entry) {
+        entry.style.width = widths[index]+'px'; // "20%";
+        index++
+    }, this);
+
+    g('#tbl-p table thead tr:nth-child(1)').style('position','absolute').style('background','yellow').style('z-index','2')
+    g('#tbl-p table thead tr:nth-child(1)').style('width',g.el('tbl-p').offsetWidth+'px').style('overflow','hidden')
+    g('#tbl-p table tbody tr td:nth-child(1)').style('position','absolute').style('width',widths[0]+'px').style('z-index','1')
+})
+
+g.el('tbl-p').onscroll = function(e) {
+    g.el('output').value = g.el('tbl-p').scrollLeft+'px'
+    //g('#tbl thead tr:nth-child(1)').all[0].style.left = -g.el('tbl-p').scrollLeft/2+'px';
+    g('#tbl-p table thead tr:nth-child(1)').all[0].style.top = g.el('tbl-p').scrollTop+'px';
+    g('#tbl-p table .fixed-column').style('left',g.el('tbl-p').scrollLeft+'px');
+    //g('#tbl thead tr:nth-child(1)').all[0].style.right = g.el('tbl-p').scrollLeft+'px';
+}
+</script>
+
+
+</div>

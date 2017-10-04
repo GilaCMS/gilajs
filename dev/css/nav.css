@@ -1,0 +1,128 @@
+/*
+.g-toolbox {
+    text-indent: 0;
+    padding:0;
+}
+.g-toolbox>li{
+    text-decoration: none;
+    text-indent: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px 0;
+}
+
+.g-toolbar {
+    text-indent: 0;
+    padding:0;
+    list-style:none;
+    display:block;
+}
+.g-toolbar>li{
+    text-decoration: none;
+    text-indent: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px 0;
+}
+*/
+
+.g-nav {
+    list-style:none;
+    display:block;
+    padding:0;
+    margin: auto;
+    z-index: 999999;
+    font: 15px Arial;
+}
+.g-nav li{
+    display: inline-block;
+    padding:0;
+    position:relative;
+}
+.g-nav li a{
+    text-decoration: none;
+    padding:16px 16px;
+    display: inline-block;
+    width:100%;
+}
+.g-nav li a:hover{
+    cursor:pointer;
+}
+.g-nav li ul{
+    list-style:none;
+    border: 1px solid var(--main-border-color);
+    position:absolute;
+    display:none;
+    padding:inherit;
+    width:auto;
+    min-width:120px;
+    z-index: 999999;
+}
+.g-nav li ul li{
+    width:100%;
+    z-index: 999999;
+}
+
+.g-nav.vertical li a,
+.g-nav li ul li a{
+    padding: var(--main-padding);
+}
+.g-nav.vertical li ul,
+.g-nav li ul li ul{
+    top:0;right:auto;
+    left:100%
+}
+
+.g-nav li:hover>ul{display:block;}
+.g-nav li ul li:hover>ul{display:block;}
+
+.g-nav li ul{ background-color: #fff; }
+
+.g-navbar { background:var(--main-dark-color); }
+.g-navbar li{ color:#fff; }
+.g-navbar li a{ color:#ddd; }
+.g-navbar li ul li a{ color:#444; }
+.g-navbar li a:hover{ background:#000;color:white }
+
+
+.g-tabs {
+    background: inherit;
+    border-bottom: 1px solid var(--main-border-color);;
+}
+.g-tabs>li {
+    background: inherit;
+    margin-bottom: 2px;
+}
+
+.g-tabs>li.active,
+.g-tabs>li:hover{
+    background:  var(--main-bg-color);;
+    border-bottom: 3px solid var(--main-a-color);
+    transition: all 0s;
+    margin-bottom: -1px;
+}
+.tab-content>* {
+    display: none;
+}
+.tab-content>*:first-child {
+    display: block;
+}
+
+.g-group {
+    display: table;
+    border-collapse: collapse;
+}
+.g-group-item {
+    display: table-cell;
+    /*border: 1px solid var(--main-border-color)!important;*/
+    border-radius: 0;
+}
+.g-square,.g-icon {
+    width: 48px;
+}
+.g-square-sm,.g-icon-sm {
+    width: 24px;
+}
+.vertical>li {
+    display: block !important;
+}
