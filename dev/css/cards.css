@@ -1,6 +1,7 @@
 
 .g-card {
     box-shadow: 0px 1px 8px var(--main-border-color);
+    overflow: auto;
 }
 .g-panel {
     border: 1px solid #ccc;

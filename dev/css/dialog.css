@@ -11,14 +11,20 @@
     right: 0;
 }
 
-.gila-popup {
-    position: absolute;
-    padding: 12px;
-    top: 10%;
-    margin-left: 25%;
-    width: 50%;
-    height: auto;
-    border: 1px solid var(--main-border-color);
+.gila-popup{
+    position:fixed;
+    padding:12px;
+    top:10%;
+    margin-left:25%;
+    width:50%;
+    max-height:80%;
+    border:1px solid var(--main-border-color);
+    z-index: 99999;
+    overflow: scroll;
+}
+.gila-darkscreen .gila-popup{
+    position:absolute;
+    height:auto;
 }
 
 .gila-popup.large {

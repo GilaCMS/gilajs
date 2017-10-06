@@ -252,7 +252,7 @@ button:hover{
     cursor:pointer;
     text-align:center;
 }
-.g-btn:hover{
+.btn:hover, .g-btn:hover{
     color:white;
 }
 .error{background-color:var(--main-error-color)!important}
@@ -263,9 +263,9 @@ button:hover{
 .btn-white{background-color:white; border:1px solid var(--main-border-color); color:var(--main-color)!important}
 .btn-default{background-color:var(--main-primary-color)!important}
 .btn-success{background-color:var(--main-success-color)!important}
-.btn-danger{background-color:var(--main-warning-color)!important}
+.btn-warning{background-color:var(--main-warning-color)!important}
 .btn-primary{background-color:var(--main-primary-color)!important}
-.btn-danger{background-color:var(--main-error-color)!important}
+.btn-danger,.btn-error{background-color:var(--main-error-color)!important}
 
 
 
@@ -378,13 +378,19 @@ input:focus + .helptext{
 }
 
 .gila-popup{
-    position:absolute;
+    position:fixed;
     padding:12px;
     top:10%;
     margin-left:25%;
     width:50%;
-    height:auto;
+    max-height:80%;
     border:1px solid var(--main-border-color);
+    z-index:99999;
+    overflow:scroll;
+}
+.gila-darkscreen .gila-popup{
+    position:absolute;
+    height:auto;
 }
 
 .gila-popup.large{
@@ -466,6 +472,7 @@ input:focus + .helptext{
         width:900px;
     }
 }
+
 
 .row::after{
     content:"";
@@ -714,6 +721,7 @@ input:focus + .helptext{
 
 .g-card{
     box-shadow:0px 1px 8px var(--main-border-color);
+    overflow:auto;
 }
 .g-panel{
     border:1px solid #ccc;

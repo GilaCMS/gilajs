@@ -45,7 +45,7 @@ button:hover {
     cursor: pointer;
     text-align: center;
 }
-.g-btn:hover{
+.btn:hover, .g-btn:hover{
     color:white;
 }
 .error {background-color: var(--main-error-color)!important}
@@ -56,6 +56,6 @@ button:hover {
 .btn-white {background-color: white; border:1px solid var(--main-border-color); color: var(--main-color)!important}
 .btn-default {background-color: var(--main-primary-color)!important}
 .btn-success {background-color: var(--main-success-color)!important}
-.btn-danger {background-color: var(--main-warning-color)!important}
+.btn-warning {background-color: var(--main-warning-color)!important}
 .btn-primary {background-color: var(--main-primary-color)!important}
-.btn-danger {background-color: var(--main-error-color)!important}
+.btn-danger,.btn-error {background-color: var(--main-error-color)!important}
